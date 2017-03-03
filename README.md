@@ -2,7 +2,7 @@ Technology Stack Used:
 1. React for front-end
 2. React Google Map
 3. Bootstrap
-2. Node and Express for REST API
+4. Node and Express for REST API
 
 I designed my own REST API with the same data you provided on sending POST request to http://43.252.91.54:6015/iview because axios is not working correctly with the REST API
 you provided
