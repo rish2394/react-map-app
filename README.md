@@ -10,8 +10,8 @@ you provided
 
 How to make this app work?
 
-1. Go to UI folder and run the command npm install and after install run command -> (npm run start)
-2. Go to WebServer Folder and run the command npm install and then after install run command -> (node index.js)
+1. Go to UI folder and run the command (npm install) and after install run command -> (npm run start)
+2. Go to WebServer Folder and run the command (npm install) and then after install run command -> (node index.js)
    The server will start listening on Port 3002
    You can change the port if another process is using it
    Go to WebServer Folder and then open file index.js to change the port
