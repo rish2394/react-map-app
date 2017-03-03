@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const VehiclesPresentation = ({ vehicles, onClickLocate }) => {
   return (
     <ul className="list-group">

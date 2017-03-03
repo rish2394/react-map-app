@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import _ from 'lodash';
+
 import VehicleContainer from './VehicleContainer';
 import Spinner from '../components/Spinner/Spinner.js';
 import MapContainer from './MapContainer';
@@ -13,7 +14,7 @@ class HomeContainer extends Component {
     defaultLng: 78.9629
   }
   componentDidMount() {
-    /* sending requestion to the server here to fetch data using axios*/
+    /* sending request to the server here to fetch data using axios at every interval of 10sec*/
     setInterval(
       () =>  axios.get('http://192.168.1.42:3002/api/v1/vehicle-info')
                   .then((res) => {
@@ -24,7 +25,7 @@ class HomeContainer extends Component {
                   }),
       10000
     );
-      
+
   }
   onClickLocate = (evt) => {
     evt.preventDefault();
@@ -36,7 +37,8 @@ class HomeContainer extends Component {
     const index = _.findIndex(vehicles, (vehicle) => (vehicle.objectID === objectID ));
 
     // fetching the information of clicked item and printing on alert
-    // alert(JSON.stringify(vehicles[index], null, 2));
+    alert(JSON.stringify(vehicles[index], null, 2));
+    
     this.setState({defaultLat: vehicles[index].latitude, defaultLng: vehicles[index].longitude});
   }
   render() {
@@ -52,11 +54,11 @@ class HomeContainer extends Component {
      );
     }
     return (
-      <div>
-        <div className="col-lg-6">
+      <div style={{marginTop: '40px'}}>
+        <div className="col-lg-4">
           <VehicleContainer vehicles={vehicles} onClickLocate={this.onClickLocate}/>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-8">
           <MapContainer {...this.state} />
         </div>
       </div>
